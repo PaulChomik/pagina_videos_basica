@@ -1,0 +1,25 @@
+{% load static %}
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <ul class="navbar-nav">
+
+        <li>
+          <button class="btn btn-secondary" data-bs-toggle="offcanvas" data-bs-target="#demo">☰</button>
+       </li>
+
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="../static/img_avatar1.png" alt="Perfil" style="width:40px;" class="rounded-pill">
+            </a>
+        </div>
+        {% if request.user.is_authenticated %}
+          <li class="nav-item">  <a class="nav-link active" href="#">{{ user.username }}</a>  </li>
+          <li class="nav-item">  <a class="nav-link" href="{% url 'logout' %}">Salir</a> </li>
+        {% else %}
+          <li class="nav-item">  <a class="nav-link" href="{% url 'register' %}">Registrarse</a></li>
+          <li class="nav-item">  <a class="nav-link " href="{% url 'login' %}">Ingresar</a></li>
+          <li class="nav-item">  <a class="nav-link " href="{% url 'feed' %}">INICIO</a></li>
+        {% endif %}    
+
+     </ul>
+
+  </nav>

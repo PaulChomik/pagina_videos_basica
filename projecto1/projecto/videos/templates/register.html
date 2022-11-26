@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<div class="container-md">
+    
+              <div class="container p-5 bg-secondary my-5 border">
+                <div class="mt-4 p-5 bg-dark bg-gradient text-white rounded">
+                  <form class="form" method="post">
+                      {% csrf_token %}
+                      {{ form.as_p }}
+                      <div class="d-grid">
+                          <button class="btn btn-success btn-outline-light btn-block" type="submit" id="submit"> Registrarse</button>
+                      </div>
+                  </form>
+              </div>
+    </div>
+</div>
+
+{% endblock %}
