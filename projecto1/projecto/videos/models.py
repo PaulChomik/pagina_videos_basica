@@ -26,15 +26,16 @@ class Post(models.Model):
     #este codigo solo muestra en el admin site el post
     def __str__(self):
         return f'{self.user.username}:{self.content}'
-'''
+
 class Movie(models.Model):
     
     #tengo qe crear un campo movie que tenga
     #- nombre  -comentario o sinopsis  -link para ver el video
     #-comentarios de los usuarios
     
-    user=models.ForeignKey(User, on_delete=models.CASCADE,related_name='Movie')
-    name=models.CharField(max_length=30)
+    #user=models.ForeignKey(User, on_delete=models.CASCADE,related_name='Movie')
+    name=models.CharField(max_length=100)
+    you_tube_insert=models.TextField()
     link=models.URLField(null=True,blank=True,verbose_name='Direccion del Trailer')
     sinopsis=models.TextField()
     image=models.ImageField(default='img_avatar1.png')
@@ -44,4 +45,4 @@ class Movie(models.Model):
         ordering=['-timestamp']
     def __str__(self):
         return f'{self.name}:{self.sinopsis},{self.link}'
- '''
+

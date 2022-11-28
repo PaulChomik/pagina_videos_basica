@@ -26,4 +26,11 @@ urlpatterns = [
     path('register/',views.register,name='register'),
     path('login/',LoginView.as_view(template_name='login.html'),name='login'),
     path('logout/',LogoutView.as_view(template_name='logout.html'),name='logout'), #para poder redireccionar el formulario hay que poner en settings.py LOGIN_REDIRECT
-]+ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # this is to manage static files
+]+  static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+'''
+tenia un error en el cual definia por defecto la ruta de los archivos staticos 
+como static_url ,pero en settings ponia media_url
+'''
+
+#static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) # this is to manage static files

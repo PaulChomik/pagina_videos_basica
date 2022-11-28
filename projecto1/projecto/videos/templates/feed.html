@@ -18,115 +18,65 @@
   </div>
 
 <div class="bg-secondary p-3 bg-gradient" style="background-color:#cc0033;">
-
-
-  <div class="row">
-    <div class="col">
-          <div class="card" style="width:300px">
-            <img class="card-img-top" src="../static/img_avatar1.png" alt="Card image">
-            <div class="card-img-overlay">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">Some example text.</p>
-                <a href="#" class="btn btn-primary">See Profile</a>
+<!-- en python si queremos crear una lista iterable entre distintos elementos con un bucle for
+ para iterar entre una lista definida podemos poner "123" iterando en la string ya que la string es un objeto iterable
+{% for i in "123"%}
+{% endfor %}
+-->
+  
+  
+      <div class="row">
+        {% for movie in movies1_3 %}
+          
+            <div class="col">
+                  <div class="card" style="width: 300px;height: 400px;">
+                    <img class="card-img-center"  style="size: cover" src="{{ movie.image.url }}" alt="Card image">
+                    <div class="card-img-overlay">
+                        <h4 class="card-title">John Doe</h4>
+                        <p class="card-text">Some example text.</p>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card" style="width:300px">
-          <img class="card-img-top" src="../static/img_avatar1.png" alt="Card image">
-          <div class="card-img-overlay">
-              <h4 class="card-title">John Doe</h4>
-              <p class="card-text">Some example text.</p>
-              <a href="#" class="btn btn-primary">See Profile</a>
-          </div>
+          
+        {% endfor %}
       </div>
-  </div>
-
-    <div class="col">
-    <div class="card" style="width:300px">
-      <img class="card-img-top" src="../static/img_avatar1.png" alt="Card image">
-      <div class="card-img-overlay">
-          <h4 class="card-title">John Doe</h4>
-          <p class="card-text">Some example text.</p>
-          <a href="#" class="btn btn-primary">See Profile</a>
-      </div>
-     </div>
-
-    </div>
-
-  </div>
-
-  <div class="row">
-    <div class="col">
-          <div class="card" style="width:300px">
-            <img class="card-img-top" src="../static/img_avatar1.png" alt="Card image">
-            <div class="card-img-overlay">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">Some example text.</p>
-                <a href="#" class="btn btn-primary">See Profile</a>
+      
+      <div class="row">
+        {% for movie in movies4_6 %}
+          
+            <div class="col">
+                  <div class="card" style="width: 300px;height: 400px">
+                    <img class="card-img-top" style="max-height:100%;height: auto" src=".{{ movie.image.url }}" alt="Card image">
+                    <div class="card-img-overlay">
+                        <h4 class="card-title">John Doe</h4>
+                        <p class="card-text">Some example text.</p>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card" style="width:300px">
-          <img class="card-img-top" src="../static/img_avatar1.png" alt="Card image">
-          <div class="card-img-overlay">
-              <h4 class="card-title">John Doe</h4>
-              <p class="card-text">Some example text.</p>
-              <a href="#" class="btn btn-primary">See Profile</a>
-          </div>
+          
+        {% endfor %}
       </div>
-  </div>
-
-    <div class="col">
-    <div class="card" style="width:300px">
-      <img class="card-img-top" src="../static/img_avatar1.png" alt="Card image">
-      <div class="card-img-overlay">
-          <h4 class="card-title">John Doe</h4>
-          <p class="card-text">Some example text.</p>
-          <a href="#" class="btn btn-primary">See Profile</a>
-      </div>
-     </div>
-
-    </div>
-
-  </div>
-
-  <div class="row">
-    <div class="col">
-          <div class="card" style="width:300px">
-            <img class="card-img-top" src="../static/img_avatar1.png" alt="Card image">
-            <div class="card-img-overlay">
-                <h4 class="card-title">John Doe</h4>
-                <p class="card-text">Some example text.</p>
-                <a href="#" class="btn btn-primary">See Profile</a>
+      
+      <div class="row">
+        {% for movie in movies7_9 %}
+          
+            <div class="col">
+                  <div class="card" style="width: 300px;height: 400px">
+                    <img class="card-img-top" style="size: cover"  src="{{ movie.image.url }}" alt="Card image">
+                    <div class="card-img-overlay">
+                        <h4 class="card-title">John Doe</h4>
+                        <p class="card-text">Some example text.</p>
+                        <a href="#" class="btn btn-primary">See Profile</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    <div class="col">
-        <div class="card" style="width:300px">
-          <img class="card-img-top" src="../static/img_avatar1.png" alt="Card image">
-          <div class="card-img-overlay">
-              <h4 class="card-title">John Doe</h4>
-              <p class="card-text">Some example text.</p>
-              <a href="#" class="btn btn-primary">See Profile</a>
-          </div>
+          
+        {% endfor %}
       </div>
-  </div>
+  
 
-    <div class="col">
-    <div class="card" style="width:300px">
-      <img class="card-img-top" src="../static/img_avatar1.png" alt="Card image">
-      <div class="card-img-overlay">
-          <h4 class="card-title">John Doe</h4>
-          <p class="card-text">Some example text.</p>
-          <a href="#" class="btn btn-primary">See Profile</a>
-      </div>
-     </div>
-
-    </div>
-
-  </div>
 </div>
   </article>
 {% endblock %}
