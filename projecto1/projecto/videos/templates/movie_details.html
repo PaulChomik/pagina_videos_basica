@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<div class="row">
+    <div class="col-sm-8" style="background-color:hsl(0, 100%, 90%);">
+    <!-- movie name-->
+    <p>
+        {{name}}
+    </p>
+    <!-- movie trailer from you tube-->
+     <div>
+        {% you_tube_insert %}
+     </div>
+
+    <!-- user 's coments-->
+    
+    </div>
+
+    <div class="col-sm-4" style="background-color: rgb(255, 244, 230);">
+         
+
+    </div>
+</div> 
+
+
+{% endblock %}

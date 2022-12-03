@@ -40,16 +40,19 @@ def register(request):
     context={'form':form}
     return render(request,'register.html',context)
 
+
 '''
-def login(request):
-    if request.method=='POST':
-        form=UserRegisterForm(request.POST)
-        if form.is_valid():
-            username=form.cleaned_data['username']
-            messages.success(request,f'usuario {username} creado')
-            return redirect('feed')
-    else:
-        form=UserRegisterForm()
-    context={'form':form}
-    return render(request,'login.html',context)
+esta view busca dar el detalle d euna pelicula, aqui el usuario verá en su url
+un www.pagina.com/movie_details/pelicula_elegida
 '''
+def movie_details(request,movie_name):
+    #movie_name=request.movie.name
+    current_movie=Movie.objects.get(name=movie_name)
+    # current_movie=Movie.objects.filter(name=movie_name)
+    context={'name':current_movie.name,
+         'sinopsis':current_movie.sinopsis,
+         'you_tube_insert':current_movie.you_tube_insert,
+         'link':current_movie.link}
+    return render(request,'movie_details.html',context)
+
+

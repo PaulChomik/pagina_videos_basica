@@ -26,6 +26,7 @@ urlpatterns = [
     path('register/',views.register,name='register'),
     path('login/',LoginView.as_view(template_name='login.html'),name='login'),
     path('logout/',LogoutView.as_view(template_name='logout.html'),name='logout'), #para poder redireccionar el formulario hay que poner en settings.py LOGIN_REDIRECT
+    path('movie_details/<str:movie_name>/',views.movie_details,name='movie_details'),
 ]+  static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 '''
