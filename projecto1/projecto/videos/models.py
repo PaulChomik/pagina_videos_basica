@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
+from embed_video.fields import  EmbedVideoField
 '''
 PAra activar y actualizar los modelos hay que hacer
 python manage.py makemigrations
@@ -35,8 +36,9 @@ class Movie(models.Model):
     
     #user=models.ForeignKey(User, on_delete=models.CASCADE,related_name='Movie')
     name=models.CharField(max_length=100)
-    you_tube_insert=models.TextField()
+    you_tube_insert=EmbedVideoField()
     link=models.URLField(null=True,blank=True,verbose_name='Direccion del Trailer')
+    link1=models.CharField(max_length=30,default="no_hay_nada")
     sinopsis=models.TextField()
     image=models.ImageField(default='img_avatar1.png')
     timestamp=models.DateTimeField(default=timezone.now)

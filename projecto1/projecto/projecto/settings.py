@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'videos.apps.VideosConfig',  #agregar nombre_projecto.apps.Nombre_appConfig  el nombre appp config esta en apps.py
     'django.contrib.humanize', # sirve para poder dar un formato horario mas entendible a posteos y mensajes
+    'embed_video',
 ]
 
 MIDDLEWARE = [
@@ -141,3 +142,6 @@ LOGIN_REDIRECT_URL='feed'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.template.context_processors.request',
+)

@@ -1,26 +1,68 @@
+
+
 {% extends 'layout.html' %}
+{% load embed_video_tags %}
 {% block content %}
 
 <div class="row">
     <div class="col-sm-8" style="background-color:hsl(0, 100%, 90%);">
-    <!-- movie name-->
-    <p>
-        {{name}}
-    </p>
-    <!-- movie trailer from you tube-->
-     <div>
-        {% you_tube_insert %}
-     </div>
+            
+            <div class="container p-5 my-5">
+                   <!-- movie name-->
+                    <p class="text-alingh:center">
+                        {{name}}
+                    </p>
+                    <!-- movie trailer from you tube-->
+                <div class="embed-responsive embed-responsive-1by1">
+                    <iframe class="embed-responsive-item" src="{{ you_tube_insert }}" width="720" height="480"
+                            title="YouTube video player" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+           
 
-    <!-- user 's coments-->
-    
-    </div>
-
+            <!-- user 's coments-->
+            
+            
+            <div>
+                <div class="container p-5 my-5 bg-primary text-white">
+                    <h1>sinopsis</h1>
+                    <p>{{sinopsis}}</p>
+                  </div>
+                
+            </div>
+    </div> 
     <div class="col-sm-4" style="background-color: rgb(255, 244, 230);">
-         
-
+         <p>Peliculas Relacionadas</p>
+        
+    
+            {% for movie in movies1_3 %}
+                  <div class="row">
+                
+                        <div class="container p-5 my-5">
+                    
+                            <div class="card" style="width: 300px;height: 400px;">
+                                <img class="card-img-center"  style="size: cover" src="{{ movie.image.url }}" alt="Card image">
+                                <div class="card-img-overlay">
+                                    <h4 class="card-title" style="color: white;
+                                    text-shadow: 2px 2px 4px #000000">{{ movie.name }}</h4>
+                                    <p class="card-text" style="color: rgb(38, 37, 37);
+                                    text-shadow: 2px 2px 4px #ffffff">{{ movie.sinopsis|slice:":150" }}</p>
+                                    <!-- pedir el detalle de la pelicula en funcion de el nombre, con 2 parametros
+                                    en la url: 1nombre de url(movie_details) 2-nombre de la pelicula(moviename)-->
+                                    <a class="btn btn-primary" href="{% url 'movie_details' movie.name %}">Ver Trailer</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+            {% endfor %}
     </div>
-</div> 
+      
 
+
+</div>
 
 {% endblock %}

@@ -49,10 +49,11 @@ def movie_details(request,movie_name):
     #movie_name=request.movie.name
     current_movie=Movie.objects.get(name=movie_name)
     # current_movie=Movie.objects.filter(name=movie_name)
+    movies1_3=Movie.objects.all()[0:3]
     context={'name':current_movie.name,
          'sinopsis':current_movie.sinopsis,
          'you_tube_insert':current_movie.you_tube_insert,
-         'link':current_movie.link}
+         'link':current_movie.link,'link1':current_movie.link1,'movies1_3':movies1_3}
     return render(request,'movie_details.html',context)
 
 
